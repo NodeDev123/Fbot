@@ -10,6 +10,7 @@ async function getLinks() {
         },
         select: {
             link: true,
+            withdrawalChannel: true,
         },
     });
 

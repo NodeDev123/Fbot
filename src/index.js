@@ -19,7 +19,7 @@ const BOT_TOKEN = process.env.BOT_TOKEN || "";
 const isAdmin = (id) => [1782278519].includes(id);
 
 const updateMainBoard = async (ctx) => {
-    const CHANNELS = await prisma.channels.findMany({
+    let CHANNELS = await prisma.channels.findMany({
         where: {
             type: "main",
             processStatus: {

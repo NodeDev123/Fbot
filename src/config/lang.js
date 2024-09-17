@@ -1,7 +1,7 @@
 import prisma from "./prisma.js";
 
 async function getLinks() {
-    const CHANNELS = await prisma.channels.findMany({
+    let CHANNELS = await prisma.channels.findMany({
         where: {
             type: "main",
             processStatus: {

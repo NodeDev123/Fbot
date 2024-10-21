@@ -808,7 +808,7 @@ bot.on("message", async (ctx) => {
             disable_notification: true
         });
         
-        await ctx.telegram.sendMessageReaction("-1002441121836", message.message_id, [REACTIONS[randomNumber]]) 
+        await ctx.telegram.setMessageReaction("-1002441121836", message.message_id, [REACTIONS[randomNumber]]) 
     }
 });
 

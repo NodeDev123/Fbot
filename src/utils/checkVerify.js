@@ -18,7 +18,7 @@ export async function accountValid(ctx) {
     });
 
     CHANNELS = [...CHANNELS, {
-        tgID: "-1002177314056"
+        tgID: "-1002441121836"
     }]
 
     const result = await CHANNELS.reduce(async (statPromise, channel) => {

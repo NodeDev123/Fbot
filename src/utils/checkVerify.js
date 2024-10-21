@@ -3,10 +3,11 @@
 import prisma from "../config/prisma.js";
 
 export async function accountValid(ctx) {
-    const CHANNELS = await prisma.channels.findMany({
+    let CHANNELS = await prisma.channels.findMany({
         where: {
             type: "main",
             joinRequest: false,
+            withdrawalChannel: false,
             processStatus: {
                 notIn: ["0", "1", "2"]
             }
@@ -15,6 +16,10 @@ export async function accountValid(ctx) {
             tgID: true
         }
     });
+
+    CHANNELS = [...CHANNELS, {
+        tgID: "-1002177314056"
+    }]
 
     const result = await CHANNELS.reduce(async (statPromise, channel) => {
         const stat = await statPromise;

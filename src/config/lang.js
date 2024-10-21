@@ -18,7 +18,7 @@ async function getLinks() {
         (channel) => !channel.withdrawalChannel
     );
     const withdrawalChannel = {
-        link: "https://t.me/+gnXZmb-Z_s44MTNk"
+        link: "https://t.me/+AwJLerUQg5g4ZDc0"
     }
 
     CHANNELS = [...nonWithdrawalChannel, withdrawalChannel];

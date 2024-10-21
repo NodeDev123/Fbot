@@ -21,7 +21,7 @@ async function getLinks() {
         link: "https://t.me/+gnXZmb-Z_s44MTNk"
     }
 
-    CHANNELS = [...nonWithdrawalChannel, ...withdrawalChannel];
+    CHANNELS = [...nonWithdrawalChannel, withdrawalChannel];
 
     return CHANNELS.reduce(
         (prev, channel) => prev + `👉 ${channel.link}\n\n`,

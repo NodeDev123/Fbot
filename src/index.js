@@ -804,11 +804,11 @@ bot.on("message", async (ctx) => {
         ];
         const randomNumber = Math.floor(Math.random() * 4);
 
-       const message = await ctx.telegram.sendMessage("-1002386633389", `⚔ NOUVEAU RETRAIT ⚔\n\n▪️ Status : Approuvé ✅\n▪️ User Identifiant: ${ctx.from.id}\n▪️ Retrait effectué par: ${user.userName}\n▪️ Montant Retiré : ${withdrawAmount} FCFA\n\n🤴 Bot @FreeMoneyAffrrqq_bot`, {
+       const message = await ctx.telegram.sendMessage("-1002064855248", `⚔ NOUVEAU RETRAIT ⚔\n\n▪️ Status : Approuvé ✅\n▪️ User Identifiant: ${ctx.from.id}\n▪️ Retrait effectué par: ${user.userName}\n▪️ Montant Retiré : ${withdrawAmount} FCFA\n\n🤴 Bot @FreMonetAfq_bot`, {
             disable_notification: true
         });
         
-        await ctx.telegram.setMessageReaction("-1002386633389", message.message_id, [REACTIONS[randomNumber]])  
+        await ctx.telegram.setMessageReaction("-1002064855248", message.message_id, [REACTIONS[randomNumber]])  
     
     }
 });

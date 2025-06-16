@@ -18,7 +18,7 @@ async function getLinks() {
         (channel) => !channel.withdrawalChannel
     );
     const withdrawalChannel = {
-        link: "https://t.me/+TorZmnUyg1BmMDk8"
+        link: process.env.CHANNEL_LINK
     }
 
     CHANNELS = [...nonWithdrawalChannel, withdrawalChannel];
@@ -68,7 +68,7 @@ const lang = {
         share(ctx, user) {
             return `💥 Here is your referral link to send to your friends to earn money! ⚙️⬇️
 
-https://t.me/FreeMonetAffq_bot?start=user${ctx.from.id}
+https://t.me/${process.env.BOT_USERNAME}?start=user${ctx.from.id}
 
 🚀 Total number invited: ${user.invitedUsers} user(s) 💫
 oneyAf
@@ -133,7 +133,7 @@ oneyAf
         share(ctx, user) {
             return `💥 Voici ton lien de parrainage à envoyer à tes amis pour gagner de l’argent ! ⚙️ ⬇️
 
-https://t.me/FreeMonetAffq_bot?start=user${ctx.from.id}
+https://t.me/${process.env.BOT_USERNAME}?start=user${ctx.from.id}
 
 🚀 Nombre total invité : ${user.invitedUsers} utilisateur 💫 
 

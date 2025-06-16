@@ -3,6 +3,7 @@ import { message } from "telegraf/filters";
 import express from "express";
 
 import dotenv from "dotenv";
+dotenv.config();
 
 import { handleError } from "./commands/index.js";
 import lang from "./config/lang.js";
@@ -11,7 +12,6 @@ import prisma from "./config/prisma.js";
 import keyboard from "./config/keyboard.js";
 import { v4 as uuid } from "uuid";
 
-dotenv.config();
 
 const BOT_TOKEN = process.env.BOT_TOKEN || "";
 // const ENVIRONMENT = process.env.NODE_ENV || "";
@@ -803,12 +803,13 @@ bot.on("message", async (ctx) => {
             },
         ];
         const randomNumber = Math.floor(Math.random() * 4);
+        const chatId = process.env.CHANNEL_ID;
 
-       const message = await ctx.telegram.sendMessage("-1002064855248", `⚔ NOUVEAU RETRAIT ⚔\n\n▪️ Status : Approuvé ✅\n▪️ User Identifiant: ${ctx.from.id}\n▪️ Retrait effectué par: ${user.userName}\n▪️ Montant Retiré : ${withdrawAmount} FCFA\n\n🤴 Bot @FreMonetAfq_bot`, {
+       const message = await ctx.telegram.sendMessage(chatId, `⚔ NOUVEAU RETRAIT ⚔\n\n▪️ Status : Approuvé ✅\n▪️ User Identifiant: ${ctx.from.id}\n▪️ Retrait effectué par: ${user.userName}\n▪️ Montant Retiré : ${withdrawAmount} FCFA\n\n🤴 Bot @${process.env.BOT_USERNAME}`, {
             disable_notification: true
         });
         
-        await ctx.telegram.setMessageReaction("-1002064855248", message.message_id, [REACTIONS[randomNumber]])  
+        await ctx.telegram.setMessageReaction(chatId, message.message_id, [REACTIONS[randomNumber]])  
     
     }
 });
